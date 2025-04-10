@@ -1,84 +1,28 @@
-
 <!DOCTYPE html>
-<html lang="id">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Multichat Narator Horor AI</title>
+  <title>Narator Horor AI</title>
   <style>
     body {
-      background-color: #111;
-      color: #eee;
+      background-color: #0d0d0d;
+      color: #e0e0e0;
       font-family: 'Courier New', monospace;
-      padding: 20px;
       text-align: center;
+      padding-top: 50px;
     }
-
-    textarea {
-      width: 90%;
-      max-width: 500px;
-      height: 250px;
-      background-color: #222;
-      color: #fff;
-      padding: 10px;
-      border: 1px solid #444;
-      margin-top: 20px;
+    h1 {
+      font-size: 2.5em;
+      color: #ff4444;
     }
-
-    button {
-      margin-top: 20px;
-      padding: 10px 20px;
-      font-size: 16px;
-      background-color: #ff3e00;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
+    p {
+      font-size: 1.2em;
+      color: #cccccc;
     }
   </style>
 </head>
 <body>
-  <h1>🎭 Narator Horor AI - Mode Percakapan</h1>
-  <p>Masukkan dialog per baris dengan format:<br><strong>Karakter: Dialog</strong></p>
-
-  <textarea id="dialogInput" placeholder="Contoh:
-A: Kau dengar itu?
-B: Apa?
-A: Suara dari lemari..."></textarea><br>
-  <button onclick="mulaiPercakapan()">🔊 Mainkan Cerita</button>
-
-  <script>
-    function mulaiPercakapan() {
-      const rawText = document.getElementById("dialogInput").value;
-      const lines = rawText.split('\n').map(line => {
-        const [speaker, ...textParts] = line.split(':');
-        return { speaker: speaker?.trim(), text: textParts.join(':').trim() };
-      }).filter(item => item.speaker && item.text);
-
-      function speakLine(index = 0) {
-        if (index >= lines.length) return;
-
-        const line = lines[index];
-        const utter = new SpeechSynthesisUtterance(line.text);
-        utter.lang = 'id-ID';
-
-        // Ganti suara atau nada sesuai karakter
-        if (line.speaker === 'A') {
-          utter.pitch = 0.6;
-          utter.rate = 0.95;
-        } else if (line.speaker === 'B') {
-          utter.pitch = 1.2;
-          utter.rate = 1;
-        } else {
-          utter.pitch = 1;
-        }
-
-        utter.onend = () => speakLine(index + 1);
-        speechSynthesis.speak(utter);
-      }
-
-      speakLine();
-    }
-  </script>
+  <h1>🕯️ Narator Horor AI 🕯️</h1>
+  <p>Selamat datang di proyek narator horor AI. Website ini akan segera berisi suara menyeramkan dan kisah mencekam.</p>
+  <p>Stay tuned... 👻</p>
 </body>
 </html>
